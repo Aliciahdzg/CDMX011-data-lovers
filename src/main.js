@@ -7,19 +7,8 @@ import {
     sortData,
 } from './data.js';
 
-
+const fullData = data.pokemon;
 let filteredData = data.pokemon;
-//----------Diseño Header Responsive---------------------------
-/*jQuery('document').ready(function($) { // eslint-disable-line
-    let menuBtn = $('.menu-icon'),
-        menu = $('.navigation ul');
-    menuBtn.click(function() {
-        if (menu.hasClass("show")) {
-            menu.removeClass('show')
-        } else { menu.addClass('show') }
-
-    });
-});*/
 
 document.getElementById("menuBTN").addEventListener("click", () => {
     const mostrar = document.getElementById("navegacion").className;
@@ -100,7 +89,7 @@ document.getElementById("selectorType").addEventListener("change", (event) => {
     if (event.target.value == "Todos los Pokemon") { //al presionar esta opcion se recarga la pagina
         location.reload()
     } else { //muestra los tipos de pokemon
-        filteredData = filterTypes(event.target.value);
+        filteredData = filterTypes(event.target.value, fullData);
         document.getElementById("containerPokemon").innerHTML = "";
 
         filteredData.forEach(pokemonActual => {
@@ -123,7 +112,7 @@ pokemonRegion.forEach(regionActual => {
     createSelectRegion.appendChild(region);
 })
 document.getElementById("selectorRegion").addEventListener("change", (event) => {
-        filteredData = filterRegion(event.target.value);
+        filteredData = filterRegion(event.target.value, fullData);
         document.getElementById("containerPokemon").innerHTML = "";
 
         filteredData.forEach(pokemonActual => {

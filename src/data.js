@@ -1,5 +1,3 @@
-import data from './data/pokemon/pokemon.js';
-
 const getPokemonTypes = (filteredData) => {
     const typePokemon = new Set(); // eslint-disable-line 
     filteredData.forEach(pokemonActual => { //aqui se iteran los datos de tipo de pokemon con un forEach donde pokemonActual tiene la lista donde solo estan los tipos de pokemon,
@@ -9,7 +7,7 @@ const getPokemonTypes = (filteredData) => {
     })
     return typePokemon;
 }
-const filterTypes = (pokemonType, pokemon = data.pokemon) => {
+const filterTypes = (pokemonType, pokemon) => {
     const resultFilter = pokemon.filter(pokemon => {
         if (pokemon.type.includes(pokemonType)) {
             return true;
@@ -28,7 +26,7 @@ const getPokemonRegion = (filteredData) => {
     return orderRegion;
 }
 
-const filterRegion = (pokemonActual, pokemon = data.pokemon) => {
+const filterRegion = (pokemonActual, pokemon) => {
     const resultRegion = pokemon.filter(pokemon => {
         if (pokemon.generation.name.includes(pokemonActual)) {
             return true;

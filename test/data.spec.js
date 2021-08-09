@@ -32,11 +32,11 @@ describe('Sort by number an alphabetically ascendant and descendant', () => {
 describe('Show pokemon by types', () => {
     it('show water type', () => {
         const result = filterTypes("water", pokemonData);
-        expect(result.length).toBe(4);
+        expect(result).toEqual(pokemonMock.typeWater);
     })
     it('show poison type', () => {
         const result = filterTypes("poison", pokemonData);
-        expect(result.length).toBe(3);
+        expect(result).toEqual(pokemonMock.typePoison);
     })
 });
 
@@ -44,10 +44,10 @@ describe('filter types by generation', () => {
 
     it('show kanto generation', () => {
         const result = filterRegion("kanto", pokemonData);
-        expect(result.length).toBe(7);
+        expect(result).toEqual(pokemonMock.kanto);
     });
     it('show johto generation', () => {
         const result = filterRegion("johto", pokemonData);
-        expect(result.length).toBe(4);
+        expect(result).toEqual(pokemonMock.johto);
     });
 });
