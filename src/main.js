@@ -158,3 +158,11 @@ document.getElementById("selectorSort").addEventListener("change", (event) => {
     createPokemonTypes(pokemonActual);
   });
 })
+
+//-------------------eventlistener del boton inicio----------------
+/*document.getElementById("selectorType").addEventListener("change", (event) => {
+    if (event.target.value == "Todos los Pokemon") { //al presionar esta opcion se recarga la pagina
+      document.getElementById("containerPokemon").innerHTML = "";
+      fullData.forEach((pokemon) => {
+        createPokemonTypes(pokemon);
+      });*/
